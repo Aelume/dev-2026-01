@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="TaskFlow 任务看板，展示任务进度、团队动态与项目公告。"
+  >
+  <title>TaskFlow 任务看板</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a class="logo" href="#dashboard">TaskFlow</a>
+
+      <form class="search-box search-desktop" role="search" action="#" onsubmit="return false">
+        <label for="task-search-desktop" class="sr-only">搜索任务</label>
+        <input
+          id="task-search-desktop"
+          type="search"
+          class="search-input"
+          placeholder="搜索任务..."
+          autocomplete="off"
+        >
+      </form>
+
+      <input type="checkbox" id="search-toggle" class="search-toggle-input" aria-hidden="true">
+      <label
+        for="search-toggle"
+        class="search-toggle-btn"
+        title="搜索任务"
+        role="button"
+        aria-label="切换搜索栏"
+        aria-expanded="false"
+      >
+        <span class="search-icon" aria-hidden="true">&#128269;</span>
+        <span class="search-close" aria-hidden="true">&times;</span>
+      </label>
+
+      <form class="search-mobile-bar" role="search" action="#" onsubmit="return false">
+        <label for="task-search-mobile" class="sr-only">搜索任务</label>
+        <input
+          id="task-search-mobile"
+          type="search"
+          class="search-input"
+          placeholder="搜索任务..."
+          autocomplete="off"
+        >
+      </form>
+
+      <button class="btn-new-task" type="button">+ 新建任务</button>
+
+      <div class="user-info">
+        <span class="user-avatar" aria-hidden="true">A</span>
+        <span class="user-name">Aelume</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="主导航">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="#dashboard" class="nav-link active">仪表盘</a>
+      </li>
+      <li class="nav-item">
+        <a href="#tasks" class="nav-link">任务列表</a>
+      </li>
+      <li class="nav-item">
+        <a href="#info" class="nav-link">项目动态</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="main">
+    <section class="dashboard-section" id="dashboard">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="hero-kicker">Spring Sprint / 2026</p>
+          <h1 class="hero-title">任务面板</h1>
+          <p class="hero-text">
+            清晰掌握团队进度，高效推进每一项任务。
+          </p>
+        </div>
+
+        <div class="hero-meta">
+          <span class="hero-pill">6 项任务</span>
+          <span class="hero-pill">2 项已完成</span>
+          <span class="hero-pill">1 项待处理风险</span>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card card-blue">
+          <span class="card-icon" aria-hidden="true">📋</span>
+          <div class="card-body">
+            <p class="card-value">6</p>
+            <p class="card-label">全部任务</p>
+          </div>
+        </div>
+
+        <div class="card card-green">
+          <span class="card-icon" aria-hidden="true">✅</span>
+          <div class="card-body">
+            <p class="card-value">2</p>
+            <p class="card-label">已完成</p>
+          </div>
+        </div>
+
+        <div class="card card-orange">
+          <span class="card-icon" aria-hidden="true">⏳</span>
+          <div class="card-body">
+            <p class="card-value">3</p>
+            <p class="card-label">进行中</p>
+          </div>
+        </div>
+
+        <div class="card card-red">
+          <span class="card-icon" aria-hidden="true">⚠</span>
+          <div class="card-body">
+            <p class="card-value">1</p>
+            <p class="card-label">已逾期</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task-section" id="tasks">
+      <h2 class="section-title">任务列表</h2>
+
+      <ul class="task-list">
+        <li class="task-item">
+          <input type="checkbox" id="t1" class="task-check">
+          <label for="t1" class="task-text">完成首页 UI 视觉改版</label>
+          <span class="task-date">截止：2026-04-20</span>
+          <span class="task-tag tag-progress">进行中</span>
+        </li>
+
+        <li class="task-item">
+          <input type="checkbox" id="t2" class="task-check">
+          <label for="t2" class="task-text">补齐项目说明文档</label>
+          <span class="task-date">截止：2026-04-22</span>
+          <span class="task-tag tag-progress">进行中</span>
+        </li>
+
+        <li class="task-item">
+          <input type="checkbox" id="t3" class="task-check" checked>
+          <label for="t3" class="task-text done">搭建本地开发环境</label>
+          <span class="task-date">截止：2026-04-15</span>
+          <span class="task-tag tag-done">已完成</span>
+        </li>
+
+        <li class="task-item">
+          <input type="checkbox" id="t4" class="task-check">
+          <label for="t4" class="task-text">修复登录页样式错位问题</label>
+          <span class="task-date">截止：2026-04-19</span>
+          <span class="task-tag tag-progress">进行中</span>
+        </li>
+
+        <li class="task-item">
+          <input type="checkbox" id="t5" class="task-check" checked>
+          <label for="t5" class="task-text done">优化移动端响应式布局</label>
+          <span class="task-date">截止：2026-04-16</span>
+          <span class="task-tag tag-done">已完成</span>
+        </li>
+
+        <li class="task-item task-overdue">
+          <input type="checkbox" id="t6" class="task-check">
+          <label for="t6" class="task-text">接入第三方支付接口</label>
+          <span class="task-date date-overdue">截止：2026-04-10</span>
+          <span class="task-tag tag-overdue">已逾期</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="info-section" id="info">
+      <h2 class="section-title">项目动态</h2>
+
+      <div class="info-cards">
+        <article class="info-card">
+          <h3 class="info-card-title">近期公告</h3>
+          <p class="info-card-text">
+            本周五 13:00 将进行项目评审，请提前准备演示稿、迭代说明和视觉稿对比。
+          </p>
+          <span class="info-date">2026-04-17</span>
+        </article>
+
+        <article class="info-card">
+          <h3 class="info-card-title">团队笔记</h3>
+          <p class="info-card-text">
+            新版视觉规范已同步到设计稿，后续页面统一沿用薄荷绿、雾青与米白的主题组合。
+          </p>
+          <span class="info-date">2026-04-15</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <a href="#dashboard" class="back-to-top" title="回到顶部" aria-label="回到顶部">
+    &#8593;
+  </a>
+
+  <footer class="footer">
+    <p class="footer-text">&copy; 2026 TaskFlow. Crafted for calm, focused work.</p>
+  </footer>
+</body>
+</html>
